@@ -1,7 +1,7 @@
 # Profiling Anggota DPR-RI 2019-2024
 ## Introduction
 An attempt to profile Indonesian legislative members using the data given in dpr.go.id, inspired by House of Cards.  
-Complete method and raw data can be found [here](https://nbviewer.jupyter.org/github/seuriously/profilingDPR2019/blob/master/dpr_profiling.ipynb).
+Complete method and raw data can be found [here](https://nbviewer.jupyter.org/github/seuriously/profilingDPR2019/blob/master/dpr_profiling.ipynb?flush_cache=true).
 
 Saat ini website dpr.go.id menampilkan data-data profil anggota DPR RI yang mencakup nama, ttl, dapil, agama, riwayat pendidikan, riwayat pekerjaan dan riwayat organisasi. Data lainnya hingga saat ini masih kosong.  
 
