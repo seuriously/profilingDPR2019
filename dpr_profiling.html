@@ -13120,7 +13120,7 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Created on Tue Jul 27 23:10:51 2020</span>
+<span class="sd">Created on Tue Jul 21 23:10:51 2020</span>
 
 <span class="sd">@author: GhilmanFatih</span>
 <span class="sd">&quot;&quot;&quot;</span>
@@ -13597,7 +13597,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">profil_raw</span><span class="p">[</span><span class="s1">&#39;usia_kategori&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">profil_raw</span><span class="p">[</span><span class="s1">&#39;usia&#39;</span><span class="p">],</span> <span class="n">q</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">profil_raw</span><span class="p">[</span><span class="s1">&#39;usia_kategori&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">profil_raw</span><span class="p">[</span><span class="s1">&#39;usia&#39;</span><span class="p">],</span> <span class="n">q</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13659,6 +13659,19 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">profil_raw</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data_anggota_dpr_2019.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">univar_analysis</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">profil_raw</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">col</span><span class="p">])[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cnt&#39;</span><span class="p">)</span>
     <span class="n">c</span><span class="p">[</span><span class="s1">&#39;pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">c</span><span class="o">.</span><span class="n">cnt</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span><span class="mi">2</span><span class="p">)</span>
@@ -13672,7 +13685,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">univar_analysis</span><span class="p">(</span><span class="s1">&#39;partai&#39;</span><span class="p">)</span>
@@ -13688,7 +13701,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -13784,7 +13797,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">univar_analysis</span><span class="p">(</span><span class="s1">&#39;agama&#39;</span><span class="p">)</span>
@@ -13800,7 +13813,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -13872,7 +13885,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">univar_analysis</span><span class="p">(</span><span class="s1">&#39;pendidikan_terakhir&#39;</span><span class="p">)</span>
@@ -13888,7 +13901,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -13972,7 +13985,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">univar_analysis</span><span class="p">(</span><span class="s1">&#39;is_dewan&#39;</span><span class="p">)</span>
@@ -13988,7 +14001,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -14048,7 +14061,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">univar_analysis</span><span class="p">(</span><span class="s1">&#39;is_kader&#39;</span><span class="p">)</span>
@@ -14064,7 +14077,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -14124,7 +14137,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">profil_raw</span><span class="p">[</span><span class="s1">&#39;usia&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">])</span>
@@ -14140,7 +14153,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -14160,7 +14173,7 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">profil_raw</span><span class="p">[(</span><span class="n">profil_raw</span><span class="o">.</span><span class="n">usia</span><span class="o">==</span><span class="mi">24</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">profil_raw</span><span class="o">.</span><span class="n">usia</span><span class="o">==</span><span class="mi">81</span><span class="p">)]</span>
@@ -14176,7 +14189,7 @@ Name: usia, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[32]:</div>
+    <div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -14304,7 +14317,7 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">profil_long</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;akd_clean&#39;</span><span class="p">])[</span><span class="s1">&#39;noAnggota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cnt&#39;</span><span class="p">)</span>
@@ -14322,7 +14335,7 @@ Name: usia, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -14520,14 +14533,14 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bivariate_analysis</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">sortcol</span> <span class="o">=</span> <span class="s1">&#39;p(B|A)&#39;</span><span class="p">):</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">profil_long</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;partai&#39;</span><span class="p">,</span><span class="s1">&#39;rank_partai&#39;</span><span class="p">,</span> <span class="n">col</span><span class="p">])[</span><span class="s1">&#39;noAnggota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cnt&#39;</span><span class="p">)</span>
     <span class="n">c</span><span class="p">[</span><span class="s1">&#39;p(A|B)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">c</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;partai&#39;</span><span class="p">)[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
     <span class="n">c</span><span class="p">[</span><span class="s1">&#39;p(B|A)&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">c</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">col</span><span class="p">)[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;sum&#39;</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">c</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">cnt</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;rank_partai&#39;</span><span class="p">,</span> <span class="n">sortcol</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;rank_partai&#39;</span><span class="p">,</span> <span class="n">sortcol</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -14537,7 +14550,7 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bivariate_analysis</span><span class="p">(</span><span class="s1">&#39;akd_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;cnt&#39;</span><span class="p">)</span>
@@ -14553,7 +14566,7 @@ Name: usia, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -16155,7 +16168,7 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bivariate_analysis</span><span class="p">(</span><span class="s1">&#39;is_dewan&#39;</span><span class="p">)</span>
@@ -16171,7 +16184,7 @@ Name: usia, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -16450,7 +16463,7 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bivariate_analysis</span><span class="p">(</span><span class="s1">&#39;agama&#39;</span><span class="p">)</span>
@@ -16466,7 +16479,7 @@ Name: usia, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[37]:</div>
+    <div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -16745,7 +16758,7 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">profil_raw</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;partai&#39;</span><span class="p">,</span><span class="s1">&#39;rank_partai&#39;</span><span class="p">])[</span><span class="s1">&#39;usia&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">])</span>
@@ -16761,7 +16774,7 @@ Name: usia, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -16874,7 +16887,7 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bivariate_analysis</span><span class="p">(</span><span class="s1">&#39;usia_kategori&#39;</span><span class="p">)</span>
@@ -16890,7 +16903,7 @@ Name: usia, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[40]:</div>
 
 
 
@@ -16923,367 +16936,439 @@ Name: usia, dtype: float64</pre>
   </thead>
   <tbody>
     <tr>
-      <th>228</th>
+      <th>33</th>
       <td>PDIP</td>
       <td>1.0</td>
       <td>(55.0, 61.0]</td>
       <td>27</td>
-      <td>0.219512</td>
+      <td>0.212598</td>
       <td>0.250000</td>
     </tr>
     <tr>
-      <th>227</th>
+      <th>35</th>
+      <td>PDIP</td>
+      <td>1.0</td>
+      <td>nan</td>
+      <td>4</td>
+      <td>0.031496</td>
+      <td>0.250000</td>
+    </tr>
+    <tr>
+      <th>32</th>
       <td>PDIP</td>
       <td>1.0</td>
       <td>(49.0, 55.0]</td>
       <td>31</td>
-      <td>0.252033</td>
+      <td>0.244094</td>
       <td>0.244094</td>
     </tr>
     <tr>
-      <th>226</th>
+      <th>31</th>
       <td>PDIP</td>
       <td>1.0</td>
       <td>(44.0, 49.0]</td>
       <td>24</td>
-      <td>0.195122</td>
+      <td>0.188976</td>
       <td>0.237624</td>
     </tr>
     <tr>
-      <th>229</th>
+      <th>34</th>
       <td>PDIP</td>
       <td>1.0</td>
       <td>(61.0, 81.0]</td>
       <td>21</td>
-      <td>0.170732</td>
+      <td>0.165354</td>
       <td>0.221053</td>
     </tr>
     <tr>
-      <th>225</th>
+      <th>30</th>
       <td>PDIP</td>
       <td>1.0</td>
       <td>(23.0, 44.0]</td>
       <td>20</td>
-      <td>0.162602</td>
+      <td>0.157480</td>
       <td>0.160000</td>
     </tr>
     <tr>
-      <th>53</th>
+      <th>9</th>
       <td>Golkar</td>
       <td>2.0</td>
       <td>(55.0, 61.0]</td>
       <td>20</td>
-      <td>0.240964</td>
+      <td>0.235294</td>
       <td>0.185185</td>
     </tr>
     <tr>
-      <th>50</th>
+      <th>6</th>
       <td>Golkar</td>
       <td>2.0</td>
       <td>(23.0, 44.0]</td>
       <td>21</td>
-      <td>0.253012</td>
+      <td>0.247059</td>
       <td>0.168000</td>
     </tr>
     <tr>
-      <th>54</th>
+      <th>10</th>
       <td>Golkar</td>
       <td>2.0</td>
       <td>(61.0, 81.0]</td>
       <td>15</td>
-      <td>0.180723</td>
+      <td>0.176471</td>
       <td>0.157895</td>
     </tr>
     <tr>
-      <th>51</th>
+      <th>7</th>
       <td>Golkar</td>
       <td>2.0</td>
       <td>(44.0, 49.0]</td>
       <td>13</td>
-      <td>0.156627</td>
+      <td>0.152941</td>
       <td>0.128713</td>
     </tr>
     <tr>
-      <th>52</th>
+      <th>11</th>
+      <td>Golkar</td>
+      <td>2.0</td>
+      <td>nan</td>
+      <td>2</td>
+      <td>0.023529</td>
+      <td>0.125000</td>
+    </tr>
+    <tr>
+      <th>8</th>
       <td>Golkar</td>
       <td>2.0</td>
       <td>(49.0, 55.0]</td>
       <td>14</td>
-      <td>0.168675</td>
+      <td>0.164706</td>
       <td>0.110236</td>
     </tr>
     <tr>
-      <th>10</th>
+      <th>0</th>
       <td>Gerindra</td>
       <td>3.0</td>
       <td>(23.0, 44.0]</td>
       <td>23</td>
-      <td>0.306667</td>
+      <td>0.302632</td>
       <td>0.184000</td>
     </tr>
     <tr>
-      <th>14</th>
+      <th>4</th>
       <td>Gerindra</td>
       <td>3.0</td>
       <td>(61.0, 81.0]</td>
       <td>15</td>
-      <td>0.200000</td>
+      <td>0.197368</td>
       <td>0.157895</td>
     </tr>
     <tr>
-      <th>12</th>
+      <th>2</th>
       <td>Gerindra</td>
       <td>3.0</td>
       <td>(49.0, 55.0]</td>
       <td>18</td>
-      <td>0.240000</td>
+      <td>0.236842</td>
       <td>0.141732</td>
     </tr>
     <tr>
-      <th>13</th>
+      <th>3</th>
       <td>Gerindra</td>
       <td>3.0</td>
       <td>(55.0, 61.0]</td>
       <td>13</td>
-      <td>0.173333</td>
+      <td>0.171053</td>
       <td>0.120370</td>
     </tr>
     <tr>
-      <th>11</th>
+      <th>5</th>
+      <td>Gerindra</td>
+      <td>3.0</td>
+      <td>nan</td>
+      <td>1</td>
+      <td>0.013158</td>
+      <td>0.062500</td>
+    </tr>
+    <tr>
+      <th>1</th>
       <td>Gerindra</td>
       <td>3.0</td>
       <td>(44.0, 49.0]</td>
       <td>6</td>
-      <td>0.080000</td>
+      <td>0.078947</td>
       <td>0.059406</td>
     </tr>
     <tr>
-      <th>105</th>
+      <th>12</th>
       <td>Nasdem</td>
       <td>4.0</td>
       <td>(23.0, 44.0]</td>
       <td>18</td>
-      <td>0.310345</td>
+      <td>0.305085</td>
       <td>0.144000</td>
     </tr>
     <tr>
-      <th>106</th>
+      <th>13</th>
       <td>Nasdem</td>
       <td>4.0</td>
       <td>(44.0, 49.0]</td>
       <td>12</td>
-      <td>0.206897</td>
+      <td>0.203390</td>
       <td>0.118812</td>
     </tr>
     <tr>
-      <th>107</th>
+      <th>14</th>
       <td>Nasdem</td>
       <td>4.0</td>
       <td>(49.0, 55.0]</td>
       <td>11</td>
-      <td>0.189655</td>
+      <td>0.186441</td>
       <td>0.086614</td>
     </tr>
     <tr>
-      <th>109</th>
+      <th>16</th>
       <td>Nasdem</td>
       <td>4.0</td>
       <td>(61.0, 81.0]</td>
       <td>8</td>
-      <td>0.137931</td>
+      <td>0.135593</td>
       <td>0.084211</td>
     </tr>
     <tr>
-      <th>108</th>
+      <th>15</th>
       <td>Nasdem</td>
       <td>4.0</td>
       <td>(55.0, 61.0]</td>
       <td>9</td>
-      <td>0.155172</td>
+      <td>0.152542</td>
       <td>0.083333</td>
     </tr>
     <tr>
-      <th>291</th>
+      <th>17</th>
+      <td>Nasdem</td>
+      <td>4.0</td>
+      <td>nan</td>
+      <td>1</td>
+      <td>0.016949</td>
+      <td>0.062500</td>
+    </tr>
+    <tr>
+      <th>37</th>
       <td>PKB</td>
       <td>5.0</td>
       <td>(44.0, 49.0]</td>
       <td>18</td>
-      <td>0.315789</td>
+      <td>0.310345</td>
       <td>0.178218</td>
     </tr>
     <tr>
-      <th>294</th>
+      <th>40</th>
       <td>PKB</td>
       <td>5.0</td>
       <td>(61.0, 81.0]</td>
       <td>10</td>
-      <td>0.175439</td>
+      <td>0.172414</td>
       <td>0.105263</td>
     </tr>
     <tr>
-      <th>290</th>
+      <th>36</th>
       <td>PKB</td>
       <td>5.0</td>
       <td>(23.0, 44.0]</td>
       <td>13</td>
-      <td>0.228070</td>
+      <td>0.224138</td>
       <td>0.104000</td>
     </tr>
     <tr>
-      <th>292</th>
+      <th>38</th>
       <td>PKB</td>
       <td>5.0</td>
       <td>(49.0, 55.0]</td>
       <td>9</td>
-      <td>0.157895</td>
+      <td>0.155172</td>
       <td>0.070866</td>
     </tr>
     <tr>
-      <th>293</th>
+      <th>39</th>
       <td>PKB</td>
       <td>5.0</td>
       <td>(55.0, 61.0]</td>
       <td>7</td>
-      <td>0.122807</td>
+      <td>0.120690</td>
       <td>0.064815</td>
     </tr>
     <tr>
-      <th>209</th>
+      <th>41</th>
+      <td>PKB</td>
+      <td>5.0</td>
+      <td>nan</td>
+      <td>1</td>
+      <td>0.017241</td>
+      <td>0.062500</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>PD</td>
+      <td>6.0</td>
+      <td>nan</td>
+      <td>3</td>
+      <td>0.055556</td>
+      <td>0.187500</td>
+    </tr>
+    <tr>
+      <th>28</th>
       <td>PD</td>
       <td>6.0</td>
       <td>(61.0, 81.0]</td>
       <td>13</td>
-      <td>0.254902</td>
+      <td>0.240741</td>
       <td>0.136842</td>
     </tr>
     <tr>
-      <th>205</th>
+      <th>24</th>
       <td>PD</td>
       <td>6.0</td>
       <td>(23.0, 44.0]</td>
       <td>15</td>
-      <td>0.294118</td>
+      <td>0.277778</td>
       <td>0.120000</td>
     </tr>
     <tr>
-      <th>206</th>
+      <th>25</th>
       <td>PD</td>
       <td>6.0</td>
       <td>(44.0, 49.0]</td>
       <td>10</td>
-      <td>0.196078</td>
+      <td>0.185185</td>
       <td>0.099010</td>
     </tr>
     <tr>
-      <th>208</th>
+      <th>27</th>
       <td>PD</td>
       <td>6.0</td>
       <td>(55.0, 61.0]</td>
       <td>7</td>
-      <td>0.137255</td>
+      <td>0.129630</td>
       <td>0.064815</td>
     </tr>
     <tr>
-      <th>207</th>
+      <th>26</th>
       <td>PD</td>
       <td>6.0</td>
       <td>(49.0, 55.0]</td>
       <td>6</td>
-      <td>0.117647</td>
+      <td>0.111111</td>
       <td>0.047244</td>
     </tr>
     <tr>
-      <th>347</th>
+      <th>44</th>
       <td>PKS</td>
       <td>7.0</td>
       <td>(49.0, 55.0]</td>
       <td>23</td>
-      <td>0.479167</td>
+      <td>0.460000</td>
       <td>0.181102</td>
     </tr>
     <tr>
-      <th>348</th>
+      <th>47</th>
+      <td>PKS</td>
+      <td>7.0</td>
+      <td>nan</td>
+      <td>2</td>
+      <td>0.040000</td>
+      <td>0.125000</td>
+    </tr>
+    <tr>
+      <th>45</th>
       <td>PKS</td>
       <td>7.0</td>
       <td>(55.0, 61.0]</td>
       <td>13</td>
-      <td>0.270833</td>
+      <td>0.260000</td>
       <td>0.120370</td>
     </tr>
     <tr>
-      <th>346</th>
+      <th>43</th>
       <td>PKS</td>
       <td>7.0</td>
       <td>(44.0, 49.0]</td>
       <td>6</td>
-      <td>0.125000</td>
+      <td>0.120000</td>
       <td>0.059406</td>
     </tr>
     <tr>
-      <th>349</th>
+      <th>46</th>
       <td>PKS</td>
       <td>7.0</td>
       <td>(61.0, 81.0]</td>
       <td>5</td>
-      <td>0.104167</td>
+      <td>0.100000</td>
       <td>0.052632</td>
     </tr>
     <tr>
-      <th>345</th>
+      <th>42</th>
       <td>PKS</td>
       <td>7.0</td>
       <td>(23.0, 44.0]</td>
       <td>1</td>
-      <td>0.020833</td>
+      <td>0.020000</td>
       <td>0.008000</td>
     </tr>
     <tr>
-      <th>173</th>
+      <th>23</th>
+      <td>PAN</td>
+      <td>8.0</td>
+      <td>nan</td>
+      <td>2</td>
+      <td>0.045455</td>
+      <td>0.125000</td>
+    </tr>
+    <tr>
+      <th>21</th>
       <td>PAN</td>
       <td>8.0</td>
       <td>(55.0, 61.0]</td>
       <td>10</td>
-      <td>0.238095</td>
+      <td>0.227273</td>
       <td>0.092593</td>
     </tr>
     <tr>
-      <th>170</th>
+      <th>18</th>
       <td>PAN</td>
       <td>8.0</td>
       <td>(23.0, 44.0]</td>
       <td>11</td>
-      <td>0.261905</td>
+      <td>0.250000</td>
       <td>0.088000</td>
     </tr>
     <tr>
-      <th>171</th>
+      <th>19</th>
       <td>PAN</td>
       <td>8.0</td>
       <td>(44.0, 49.0]</td>
       <td>8</td>
-      <td>0.190476</td>
+      <td>0.181818</td>
       <td>0.079208</td>
     </tr>
     <tr>
-      <th>172</th>
+      <th>20</th>
       <td>PAN</td>
       <td>8.0</td>
       <td>(49.0, 55.0]</td>
       <td>8</td>
-      <td>0.190476</td>
+      <td>0.181818</td>
       <td>0.062992</td>
     </tr>
     <tr>
-      <th>174</th>
+      <th>22</th>
       <td>PAN</td>
       <td>8.0</td>
       <td>(61.0, 81.0]</td>
       <td>5</td>
-      <td>0.119048</td>
+      <td>0.113636</td>
       <td>0.052632</td>
     </tr>
     <tr>
-      <th>402</th>
+      <th>50</th>
       <td>PPP</td>
       <td>9.0</td>
       <td>(49.0, 55.0]</td>
@@ -17292,7 +17377,7 @@ Name: usia, dtype: float64</pre>
       <td>0.055118</td>
     </tr>
     <tr>
-      <th>401</th>
+      <th>49</th>
       <td>PPP</td>
       <td>9.0</td>
       <td>(44.0, 49.0]</td>
@@ -17301,7 +17386,7 @@ Name: usia, dtype: float64</pre>
       <td>0.039604</td>
     </tr>
     <tr>
-      <th>404</th>
+      <th>52</th>
       <td>PPP</td>
       <td>9.0</td>
       <td>(61.0, 81.0]</td>
@@ -17310,7 +17395,7 @@ Name: usia, dtype: float64</pre>
       <td>0.031579</td>
     </tr>
     <tr>
-      <th>400</th>
+      <th>48</th>
       <td>PPP</td>
       <td>9.0</td>
       <td>(23.0, 44.0]</td>
@@ -17319,7 +17404,7 @@ Name: usia, dtype: float64</pre>
       <td>0.024000</td>
     </tr>
     <tr>
-      <th>403</th>
+      <th>51</th>
       <td>PPP</td>
       <td>9.0</td>
       <td>(55.0, 61.0]</td>
@@ -17340,7 +17425,7 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bivariate_analysis</span><span class="p">(</span><span class="s1">&#39;pendidikan_terakhir&#39;</span><span class="p">)</span>
@@ -17356,7 +17441,7 @@ Name: usia, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[41]:</div>
 
 
 
@@ -17851,7 +17936,7 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">bivariate_analysis</span><span class="p">(</span><span class="s1">&#39;pendidikan_terakhir&#39;</span><span class="p">)</span>
@@ -17868,7 +17953,7 @@ Name: usia, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[41]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -17954,7 +18039,7 @@ Name: usia, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bivariate_analysis</span><span class="p">(</span><span class="s1">&#39;is_kader&#39;</span><span class="p">,</span> <span class="s1">&#39;p(A|B)&#39;</span><span class="p">)</span>
@@ -17970,7 +18055,7 @@ Name: usia, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -18266,15 +18351,16 @@ P(B) adalah probabilitas dari partai</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## given my profile, which party has the best chance for me to be picked as one of their legislative :)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">profil_raw</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;partai&#39;</span><span class="p">,</span> <span class="s1">&#39;rank_partai&#39;</span><span class="p">,</span> <span class="s1">&#39;agama&#39;</span><span class="p">,</span> <span class="s1">&#39;is_dewan&#39;</span><span class="p">,</span> <span class="s1">&#39;is_kader&#39;</span><span class="p">,</span> <span class="s1">&#39;pendidikan_terakhir&#39;</span><span class="p">])[</span><span class="s1">&#39;noAnggota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cnt&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">profil_raw</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;usia_kategori&#39;</span><span class="p">,</span><span class="s1">&#39;partai&#39;</span><span class="p">,</span> <span class="s1">&#39;rank_partai&#39;</span><span class="p">,</span> <span class="s1">&#39;agama&#39;</span><span class="p">,</span> <span class="s1">&#39;is_dewan&#39;</span><span class="p">,</span> <span class="s1">&#39;is_kader&#39;</span><span class="p">,</span> <span class="s1">&#39;pendidikan_terakhir&#39;</span><span class="p">])[</span><span class="s1">&#39;noAnggota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cnt&#39;</span><span class="p">)</span>
 <span class="n">c</span><span class="p">[</span><span class="s1">&#39;p(A|B)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">c</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;partai&#39;</span><span class="p">)[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
-<span class="n">c</span><span class="p">[</span><span class="s1">&#39;p(B|A)&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">c</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;agama&#39;</span><span class="p">,</span><span class="s1">&#39;is_dewan&#39;</span><span class="p">,</span> <span class="s1">&#39;is_kader&#39;</span><span class="p">,</span> <span class="s1">&#39;pendidikan_terakhir&#39;</span><span class="p">])[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;sum&#39;</span><span class="p">))</span>
+<span class="n">c</span><span class="p">[</span><span class="s1">&#39;p(B|A)&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">c</span><span class="p">[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">c</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;usia_kategori&#39;</span><span class="p">,</span> <span class="s1">&#39;agama&#39;</span><span class="p">,</span><span class="s1">&#39;is_dewan&#39;</span><span class="p">,</span> <span class="s1">&#39;is_kader&#39;</span><span class="p">,</span> <span class="s1">&#39;pendidikan_terakhir&#39;</span><span class="p">])[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+
 <span class="n">d</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;agama&#39;</span><span class="p">,</span> <span class="s1">&#39;is_dewan&#39;</span><span class="p">,</span> <span class="s1">&#39;is_kader&#39;</span><span class="p">,</span> <span class="s1">&#39;pendidikan_terakhir&#39;</span><span class="p">,</span> <span class="s1">&#39;p(B|A)&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span><span class="kc">False</span><span class="p">])</span>
-<span class="n">d</span><span class="p">[(</span><span class="n">d</span><span class="o">.</span><span class="n">agama</span><span class="o">==</span><span class="s1">&#39;Islam&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">is_dewan</span><span class="o">==</span><span class="s1">&#39;non-dewan&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">is_kader</span><span class="o">==</span><span class="s1">&#39;eksternal&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">pendidikan_terakhir</span><span class="o">==</span><span class="s1">&#39;5_s2&#39;</span><span class="p">)]</span>
+<span class="n">d</span><span class="p">[(</span><span class="n">d</span><span class="o">.</span><span class="n">usia_kategori</span><span class="o">==</span><span class="s1">&#39;(23.0, 44.0]&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">agama</span><span class="o">==</span><span class="s1">&#39;Islam&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">is_dewan</span><span class="o">==</span><span class="s1">&#39;non-dewan&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">is_kader</span><span class="o">==</span><span class="s1">&#39;eksternal&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">pendidikan_terakhir</span><span class="o">==</span><span class="s1">&#39;5_s2&#39;</span><span class="p">)]</span>
 </pre></div>
 
     </div>
@@ -18287,7 +18373,7 @@ P(B) adalah probabilitas dari partai</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[44]:</div>
 
 
 
@@ -18310,6 +18396,7 @@ P(B) adalah probabilitas dari partai</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>usia_kategori</th>
       <th>partai</th>
       <th>rank_partai</th>
       <th>agama</th>
@@ -18323,100 +18410,231 @@ P(B) adalah probabilitas dari partai</p>
   </thead>
   <tbody>
     <tr>
-      <th>8</th>
+      <th>7</th>
+      <td>(23.0, 44.0]</td>
       <td>Gerindra</td>
       <td>3.0</td>
       <td>Islam</td>
       <td>non-dewan</td>
       <td>eksternal</td>
       <td>5_s2</td>
-      <td>10</td>
-      <td>0.133333</td>
-      <td>0.20</td>
+      <td>5</td>
+      <td>0.066667</td>
+      <td>0.333333</td>
     </tr>
     <tr>
-      <th>32</th>
-      <td>Golkar</td>
-      <td>2.0</td>
-      <td>Islam</td>
-      <td>non-dewan</td>
-      <td>eksternal</td>
-      <td>5_s2</td>
-      <td>10</td>
-      <td>0.120482</td>
-      <td>0.20</td>
-    </tr>
-    <tr>
-      <th>74</th>
-      <td>PAN</td>
-      <td>8.0</td>
-      <td>Islam</td>
-      <td>non-dewan</td>
-      <td>eksternal</td>
-      <td>5_s2</td>
-      <td>7</td>
-      <td>0.166667</td>
-      <td>0.14</td>
-    </tr>
-    <tr>
-      <th>142</th>
-      <td>PKB</td>
-      <td>5.0</td>
-      <td>Islam</td>
-      <td>non-dewan</td>
-      <td>eksternal</td>
-      <td>5_s2</td>
-      <td>7</td>
-      <td>0.122807</td>
-      <td>0.14</td>
-    </tr>
-    <tr>
-      <th>117</th>
+      <th>67</th>
+      <td>(23.0, 44.0]</td>
       <td>PDIP</td>
       <td>1.0</td>
       <td>Islam</td>
       <td>non-dewan</td>
       <td>eksternal</td>
       <td>5_s2</td>
-      <td>6</td>
-      <td>0.048780</td>
-      <td>0.12</td>
+      <td>3</td>
+      <td>0.024390</td>
+      <td>0.200000</td>
     </tr>
     <tr>
-      <th>50</th>
-      <td>Nasdem</td>
-      <td>4.0</td>
-      <td>Islam</td>
-      <td>non-dewan</td>
-      <td>eksternal</td>
-      <td>5_s2</td>
-      <td>5</td>
-      <td>0.086207</td>
-      <td>0.10</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>PKS</td>
-      <td>7.0</td>
+      <th>77</th>
+      <td>(23.0, 44.0]</td>
+      <td>PKB</td>
+      <td>5.0</td>
       <td>Islam</td>
       <td>non-dewan</td>
       <td>eksternal</td>
       <td>5_s2</td>
       <td>3</td>
-      <td>0.062500</td>
-      <td>0.06</td>
+      <td>0.052632</td>
+      <td>0.200000</td>
     </tr>
     <tr>
-      <th>92</th>
+      <th>21</th>
+      <td>(23.0, 44.0]</td>
+      <td>Golkar</td>
+      <td>2.0</td>
+      <td>Islam</td>
+      <td>non-dewan</td>
+      <td>eksternal</td>
+      <td>5_s2</td>
+      <td>2</td>
+      <td>0.024096</td>
+      <td>0.133333</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>(23.0, 44.0]</td>
+      <td>PAN</td>
+      <td>8.0</td>
+      <td>Islam</td>
+      <td>non-dewan</td>
+      <td>eksternal</td>
+      <td>5_s2</td>
+      <td>1</td>
+      <td>0.023810</td>
+      <td>0.066667</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>(23.0, 44.0]</td>
       <td>PD</td>
       <td>6.0</td>
       <td>Islam</td>
       <td>non-dewan</td>
       <td>eksternal</td>
       <td>5_s2</td>
-      <td>2</td>
-      <td>0.039216</td>
-      <td>0.04</td>
+      <td>1</td>
+      <td>0.019608</td>
+      <td>0.066667</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># probability of me being a legislative</span>
+<span class="n">d</span><span class="p">[(</span><span class="n">d</span><span class="o">.</span><span class="n">usia_kategori</span><span class="o">==</span><span class="s1">&#39;(23.0, 44.0]&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">agama</span><span class="o">==</span><span class="s1">&#39;Islam&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">is_dewan</span><span class="o">==</span><span class="s1">&#39;non-dewan&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">is_kader</span><span class="o">==</span><span class="s1">&#39;eksternal&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">pendidikan_terakhir</span><span class="o">==</span><span class="s1">&#39;5_s2&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">cnt</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="n">d</span><span class="o">.</span><span class="n">cnt</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[45]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.02697841726618705</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># karakteristik anak soleh</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">profil_raw</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;usia_kategori&#39;</span><span class="p">,</span> <span class="s1">&#39;agama&#39;</span><span class="p">,</span> <span class="s1">&#39;is_dewan&#39;</span><span class="p">,</span> <span class="s1">&#39;is_kader&#39;</span><span class="p">,</span> <span class="s1">&#39;pendidikan_terakhir&#39;</span><span class="p">])[</span><span class="s1">&#39;noAnggota&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cnt&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="p">[</span><span class="s1">&#39;pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;cnt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;cnt&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>usia_kategori</th>
+      <th>agama</th>
+      <th>is_dewan</th>
+      <th>is_kader</th>
+      <th>pendidikan_terakhir</th>
+      <th>cnt</th>
+      <th>pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>39</th>
+      <td>(44.0, 49.0]</td>
+      <td>Islam</td>
+      <td>dewan</td>
+      <td>eksternal</td>
+      <td>5_s2</td>
+      <td>16</td>
+      <td>0.028777</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>(49.0, 55.0]</td>
+      <td>Islam</td>
+      <td>dewan</td>
+      <td>internal</td>
+      <td>5_s2</td>
+      <td>15</td>
+      <td>0.026978</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>(23.0, 44.0]</td>
+      <td>Islam</td>
+      <td>non-dewan</td>
+      <td>eksternal</td>
+      <td>5_s2</td>
+      <td>15</td>
+      <td>0.026978</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>(61.0, 81.0]</td>
+      <td>Islam</td>
+      <td>dewan</td>
+      <td>internal</td>
+      <td>4_s1</td>
+      <td>14</td>
+      <td>0.025180</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>(55.0, 61.0]</td>
+      <td>Islam</td>
+      <td>dewan</td>
+      <td>internal</td>
+      <td>5_s2</td>
+      <td>14</td>
+      <td>0.025180</td>
     </tr>
   </tbody>
 </table>
@@ -18432,7 +18650,12 @@ P(B) adalah probabilitas dari partai</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Trivia">Trivia<a class="anchor-link" href="#Trivia">&#182;</a></h2><p>Partai mana yang paling besar memungkinkan saya (islam, non-dewan, eksternal, S2) lolos menjadi anggota DPR: Gerindra atau Golkar.</p>
+<h2 id="Trivia">Trivia<a class="anchor-link" href="#Trivia">&#182;</a></h2><ul>
+<li>Anggota DPR yang disukai masyarakat: islam, pernah menjadi anggota dewan, kader partai, pendidikan minimal S2.  </li>
+<li>Partai mana yang paling besar memungkinkan saya (&lt;44 tahun, islam, non-dewan, eksternal, S2) lolos menjadi anggota DPR: Gerindra (33.3%)  </li>
+<li>Probabilitas saya terpilih menjadi anggota DPR: 2.7%. Small but its actually joint second largest segment over all segments.</li>
+<li>Karakteristik yang disukai masyarakat: islam, pernah menjabat sebagai anggota dewan, pendidikan minimal s2.</li>
+</ul>
 
 </div>
 </div>
